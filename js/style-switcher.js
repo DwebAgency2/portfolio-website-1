@@ -62,5 +62,20 @@ window.addEventListener("load", () => {
     }
 })
 
+// Function to cycle through colors automatically
+// Array to store the available theme colors
+const colors = ["color-1", "color-2", "color-3", "color-4", "color-5"]; // Update with your actual color titles
+
+// Function to switch colors automatically every 10 seconds
+let colorIndex = 0;
+
+function autoSwitchColors() {
+  setActiveStyle(colors[colorIndex]);
+  colorIndex = (colorIndex + 1) % colors.length; // Cycle through the colors
+}
+
+// Start the automatic color switching
+setInterval(autoSwitchColors, 10000); // Switch every 10 seconds
+
 
 

@@ -54,7 +54,9 @@ ul{
 padding-left: 270px;
 }
 */
-
+.section.back-section{
+  z-index: 1;
+}
 
 .section{
   background: var(--bg-black-900);
@@ -70,12 +72,13 @@ padding-left: 270px;
   z-index: 0;
   overflow-y: auto;
   overflow-x: hidden;
+  transition: all 0.3s ease;
 }
 
 .section.active{
   z-index: 2;
   opacity: 1;
-  animation: slideSection 2s ease;
+  animation: slideSection 1s ease;
 }
 
 @keyframes slideSection {
@@ -185,6 +188,7 @@ padding-left: 270px;
   justify-content: center;
   align-items: center;
   z-index: 10;
+  transition: all 0.3s ease;
 }
 
 
@@ -247,6 +251,7 @@ padding-left: 270px;
   display: none;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease;
 }
 
 .aside .nav-toggler span{
@@ -255,6 +260,10 @@ padding-left: 270px;
   background-color: var(--skin-color);
   display: inline-block;
   position: relative;
+}
+
+.aside .nav-toggler.open span{
+  background-color: transparent;
 }
 
 .aside .nav-toggler span::before{
@@ -266,6 +275,13 @@ padding-left: 270px;
   top: -6px;
   left: 0;
 }
+
+.aside .nav-toggler.open span::before{
+transform: rotate(45deg);
+top: 0;
+}
+
+
 .aside .nav-toggler span::after{
   content: "";
   height: 2px;
@@ -276,7 +292,11 @@ padding-left: 270px;
   left: 0;
 }
 
-
+.aside .nav-toggler.open span::after{
+  transform: rotate(-45deg);
+  top: 0;
+  }
+  
 /*==========NAVBAR TOGGLE BUTTON END========*/
 
 
@@ -451,7 +471,7 @@ h3.my-profession{
   
 }
 .about .about-content .personal-info .buttons .btn{
-  margin-right: 15px;
+  
   margin-top: 10px;
 
 }
@@ -602,6 +622,10 @@ color: var(--text-black-900);
   text-align: justify;
   color: var(--text-black-700);
 }
+
+
+
+
 
 /*==========SERVICES SECTION========*/
 .service .container{
